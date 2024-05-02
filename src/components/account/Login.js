@@ -119,7 +119,7 @@ const Login = ({isUserAuthenticated}) => {
                     account === 'login' ?
                         <Wrapper>
                             <TextField variant='standard' value={login.username} onChange={(e)=> onValueChange(e)} name='username' label="Enter Username" />
-                            <TextField variant='standard' value={login.password} onChange={(e)=> onValueChange(e)} name='password' label="Enter Password" />
+                            <TextField variant='standard' value={login.password} onChange={(e)=> onValueChange(e)} name='password' label="Enter Password" type="password" />
                             {error && <Error>{error}</Error>}
 
                             <LoginButton variant='contained' onClick={() => loginUser()}>Login</LoginButton>
@@ -129,9 +129,9 @@ const Login = ({isUserAuthenticated}) => {
 
                         :
                         <Wrapper>
-                            <TextField variant='standard' onChange={(e) => onInputChange(e)} name='name' label="Enter Name" />
-                            <TextField variant='standard' onChange={(e) => onInputChange(e)} name='username' label="Enter Username" />
-                            <TextField variant='standard' onChange={(e) => onInputChange(e)} name='password' label="Enter Password" />
+                            <TextField variant='standard' value={signup.name} onChange={(e) => onInputChange(e)} name='name' label="Enter Name" />
+                            <TextField variant='standard' value={signup.username} onChange={(e) => onInputChange(e)} name='username' label="Enter Username" />
+                            <TextField variant='standard' onChange={(e) => onInputChange(e)} name='password' label="Enter Password" type="password" />
                             {error && <Error>{error}</Error>}
 
                             <SignupButton onClick={() => signupUser()}>Signup</SignupButton>
